@@ -1,9 +1,12 @@
+.input{
+	border: 2px solid red;
+}
 html{
 	font-family: 'Raleway', sans-serif;
 	font-family: 'Catamaran', sans-serif;
 }
 .header{
-	background-color: #F78D14;
+	background-color: #F0503D;
 	display: flow-root;
 }
 .header h1{
@@ -82,4 +85,17 @@ form input{
 	width: 100px;
 	border: transparent;
 	height:25px;
+}
+.table{
+  border-collapse: collapse;
+  width: 85%;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: grey;
+  color: white;
 }
