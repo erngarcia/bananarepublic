@@ -29,14 +29,14 @@ let validar = () =>{
 			inputFecha.classList.remove('input');
 		}
 
-    if((inputStartTime.value) >= (inputEndTime.value)) {
+    if((parseInt(inputStartTime.value)) >= (parseInt(inputEndTime.value))) {
             inputStartTime.classList.add('input');
             error = true;
         }else{
 			inputStartTime.classList.remove('input');
 		}
 
-    if((inputStartToken.value) >= (inputEndToken.value)) {
+    if(parseInt(inputStartToken.value) >= parseInt(inputEndToken.value)) {
             inputStartToken.classList.add('input');
             error = true;
         }else{

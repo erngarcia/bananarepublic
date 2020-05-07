@@ -20,8 +20,8 @@ let mostrar_metricas = async() => {
 	        fila.insertCell().innerHTML = metricas[i]['end_time'];
 	        fila.insertCell().innerHTML = metricas[i]['start_token'];
 	        fila.insertCell().innerHTML = metricas[i]['end_token'];
-	        fila.insertCell().innerHTML = (metricas[i]['end_token']-metricas[i]['start_token'])/((metricas[i]['end_time']-metricas[i]['start_time'])/60);
-	        fila.insertCell().innerHTML = (metricas[i]['end_token']-metricas[i]['start_token']);
+	        fila.insertCell().innerHTML = ((parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/(parseInt(metricas[i]['end_time'])-parseInt(metricas[i]['start_time']))).toFixed(2);
+	        fila.insertCell().innerHTML = parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']);
     	}
     	else if(metricas[i]['fecha'].includes(filtro)){
 	    	let fila = tbody.insertRow();
@@ -32,7 +32,7 @@ let mostrar_metricas = async() => {
 	        fila.insertCell().innerHTML = metricas[i]['end_time'];
 	        fila.insertCell().innerHTML = metricas[i]['start_token'];
 	        fila.insertCell().innerHTML = metricas[i]['end_token'];
-	        fila.insertCell().innerHTML = (metricas[i]['end_token']-metricas[i]['start_token'])/((metricas[i]['end_time']-metricas[i]['start_time'])/60);
+	        fila.insertCell().innerHTML = (parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/(parseInt((metricas[i]['end_time'])-parseInt(metricas[i]['start_time']))/60).toFixed(1);
 	        fila.insertCell().innerHTML = (metricas[i]['end_token']-metricas[i]['start_token']);
     	}
         
