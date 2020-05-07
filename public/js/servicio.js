@@ -35,8 +35,8 @@ let registrarDatos = async (pcycle_name,pFecha, pStarttime, pEndtime, pStarttoke
     });
 };
 
-'use strict';
 let listar_metricas = async() => {
+    
     let metricas;
 
     await axios({
@@ -44,7 +44,7 @@ let listar_metricas = async() => {
             url: 'http://localhost:3000/api/listar-metricas',
             responseType: 'json'
         }).then(function(res) {
-            productos = res.data.metricas;
+            metricas = res.data.lista_metricas;
         })
         .catch(function(err) {
             console.log(err);
@@ -52,3 +52,4 @@ let listar_metricas = async() => {
 
     return metricas;
 };
+
