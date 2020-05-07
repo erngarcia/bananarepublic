@@ -6,6 +6,8 @@ let inputStartToken = document.querySelector('#startToken');
 let inputEndToken = document.querySelector('#endToken');
 let inputStartTime = document.querySelector('#startTime');
 let inputEndTime = document.querySelector('#endTime');
+let inputLogin = document.querySelector('#login');
+let inputCycleName = document.querySelector('#cycle_name');
 
 let validar = () =>{
 	let error = false;
@@ -21,9 +23,25 @@ let validar = () =>{
 	}
 
     if(new Date(inputFecha.value) >= new Date()){
-            inputFecha.classList.add('error');
+            inputFecha.classList.add('input');
             error = true;
-        }
+        }else{
+			inputFecha.classList.remove('input');
+		}
+
+    if((inputStartTime.value) >= (inputEndTime.value)) {
+            inputStartTime.classList.add('input');
+            error = true;
+        }else{
+			inputStartTime.classList.remove('input');
+		}
+
+    if((inputStartToken.value) >= (inputEndToken.value)) {
+            inputStartToken.classList.add('input');
+            error = true;
+        }else{
+			inputStartToken.classList.remove('input');
+		}
 
 	return error;
 };
@@ -44,15 +62,16 @@ let obtener_datos = () => {
 			'text' : 'Excelente',
 			'icon':'success'
 			})
-		 let sPCycleName = 5;
+		 let sPLogin = inputLogin.value;
+		 let sPCycleName = inputCycleName.value;
 		 let sPfecha = inputFecha.value;
-		 let sPstarttoken = inputStartToken.value;
-		 let sPendtoken = inputEndToken.value;
 		 let sPstarttime = inputStartTime.value;
 		 let sPendtime = inputEndTime.value;
+		 let sPstarttoken = inputStartToken.value;
+		 let sPendtoken = inputEndToken.value;
 		 let datosAceptados = false;
 
-		 registrarDatos(sPCycleName, sPfecha, sPstarttoken, sPendtoken,sPstarttime,sPendtime);
+		 registrarDatos(sPLogin, sPCycleName, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
 		 // registroALista(sPfecha, sPnombretarea, sPdescripciontarea,sPprioridad,sPencargado);
 	}
 }
