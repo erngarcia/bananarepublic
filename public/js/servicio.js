@@ -34,3 +34,21 @@ let registrarDatos = async (pcycle_name,pFecha, pStarttime, pEndtime, pStarttoke
         console.log(err);
     });
 };
+
+'use strict';
+let listar_metricas = async() => {
+    let metricas;
+
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-metricas',
+            responseType: 'json'
+        }).then(function(res) {
+            productos = res.data.metricas;
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+
+    return metricas;
+};

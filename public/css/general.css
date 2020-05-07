@@ -86,3 +86,16 @@ form input{
 	border: transparent;
 	height:25px;
 }
+.table{
+  border-collapse: collapse;
+  width: 85%;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: grey;
+  color: white;
+}
