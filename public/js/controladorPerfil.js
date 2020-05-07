@@ -44,7 +44,7 @@ let obtener_datos = () => {
 			'text' : 'Excelente',
 			'icon':'success'
 			})
-		 let sPCycleName = 3;
+		 let sPCycleName = 7;
 		 let sPfecha = inputFecha.value;
 		 let sPstarttoken = inputStartToken.value;
 		 let sPendtoken = inputEndToken.value;
