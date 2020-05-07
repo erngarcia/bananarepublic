@@ -1,12 +1,13 @@
 'use strict';
 
-let registrarDatos = async (pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) => {
+let registrarDatos = async (pcycle_name,pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) => {
 
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/registrar-metricas',
             responseType: 'json',
             data: {
+                cycle_name: pcycle_name,
             	fecha: pFecha,
                 start_time: pStarttime,
                 end_time: pEndtime,
