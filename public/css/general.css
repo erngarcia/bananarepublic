@@ -1,9 +1,12 @@
+.input{
+	border: 2px solid red;
+}
 html{
 	font-family: 'Raleway', sans-serif;
 	font-family: 'Catamaran', sans-serif;
 }
 .header{
-	background-color: #F78D14;
+	background-color: #F0503D;
 	display: flow-root;
 }
 .header h1{
