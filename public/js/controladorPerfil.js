@@ -20,7 +20,7 @@ let validar = () =>{
 		}
 	}
 
-    if(new Date(inputFecha.value) > new Date()){
+    if(new Date(inputFecha.value) >= new Date()){
             inputFecha.classList.add('error');
             error = true;
         }
@@ -44,7 +44,7 @@ let obtener_datos = () => {
 			'text' : 'Excelente',
 			'icon':'success'
 			})
-		 let sPCycleName = 7;
+		 let sPCycleName = 9;
 		 let sPfecha = inputFecha.value;
 		 let sPstarttoken = inputStartToken.value;
 		 let sPendtoken = inputEndToken.value;
