@@ -4,7 +4,7 @@ let registrarDatos = async (plogin, pcycle_name,pFecha, pStarttime, pEndtime, pS
 
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-metricas',
+            url: 'https://linguisticservices.herokuapp.com/api/registrar-metricas',
             responseType: 'json',
             data: {
                 login: plogin,
@@ -42,7 +42,7 @@ let listar_metricas = async() => {
 
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar-metricas',
+            url: 'https://linguisticservices.herokuapp.com/api/listar-metricas',
             responseType: 'json'
         }).then(function(res) {
             metricas = res.data.lista_metricas;
