@@ -42,7 +42,7 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0-b2itm.mongodb.net/test?retr
     console.log("Se estableció la conexión con la base datos.");
 
     // Se inicia la aplicacion.
-    const server = app.listen(3000, function() {
+    const server = app.listen(process.env.PORT || 3000, function() {
         let port = server.address().port;
         console.log("La aplicación está levantada en el puerto: ", port);
     });
