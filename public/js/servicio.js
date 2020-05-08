@@ -1,12 +1,13 @@
 'use strict';
 
-let registrarDatos = async (pcycle_name,pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) => {
+let registrarDatos = async (plogin, pcycle_name,pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) => {
 
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/registrar-metricas',
             responseType: 'json',
             data: {
+                login: plogin,
                 cycle_name: pcycle_name,
             	fecha: pFecha,
                 start_time: pStarttime,
@@ -36,7 +37,7 @@ let registrarDatos = async (pcycle_name,pFecha, pStarttime, pEndtime, pStarttoke
 };
 
 let listar_metricas = async() => {
-    
+
     let metricas;
 
     await axios({

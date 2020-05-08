@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" type="image/jpg" href="css/img/banana.jpg">
 	<title>
 		Banana Republic
 	</title>
@@ -31,10 +32,17 @@
 </div>
 		</div>
 		</div>
-			<div style = "margin-left: 12%; padding-top: 10%;">
+		<div style = "margin-left: 12%; padding-top: 10%;">
+			<div style="padding-bottom: 10px;">
+				<label>Filtrar:</label>
+				<input type="text" id="txtfiltro">
+			</div>
 		<table id=tbl-metricas class="table">
 			<thead>
 				<tr>
+					<th>
+						Login
+					</th>
 					<th>
 						Cycle Name
 					</th>
@@ -53,6 +61,12 @@
 					<th>
 						End token
 					</th>
+					<th>
+						Velocity (tok/min)
+					</th>
+					<th>
+						Process Count
+					</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -61,6 +75,7 @@
 		</table>
 	</div>	
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></scriptsrc></script>
 <script type="text/javascript" src="js/servicio.js"></script>
 <script type="text/javascript" src="js/controladorHistorial.js"></script>

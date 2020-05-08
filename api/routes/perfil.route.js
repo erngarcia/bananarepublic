@@ -9,6 +9,7 @@ router.post('/registrar-metricas',(req,res) =>{
 	let body = req.body;
 
 	let nueva_metrica = new Metricas({
+		login: body.login,
 		cycle_name:body.cycle_name,
 		fecha: body.fecha,
 		start_time: body.start_time,
