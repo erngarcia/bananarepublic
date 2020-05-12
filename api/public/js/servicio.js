@@ -54,3 +54,44 @@ let listar_metricas = async() => {
     return metricas;
 };
 
+let obtener_metrica_id = async(_id) =>{
+    try {
+        const response = await axios({
+            method:'get',
+            params: {_id:_id},
+            url: 'https://linguisticservices.herokuapp.com/api/buscar-metrica-id',
+            responseType: 'json'
+        });
+        return response.data._id;
+
+    } catch (error){
+        console.log(error);
+    }
+}
+
+let modificar_metrica = async(p_id, plogin, pcycle_name,pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) =>{
+    await axios({
+            method: 'put',
+            url: 'https://linguisticservices.herokuapp.com/api/modificar-metrica',
+            responseType: 'json',
+            data: {
+                _id: p_id,
+                login: plogin,
+                cycle_name: pcycle_name,
+                fecha: pFecha,
+                start_time: pStarttime,
+                end_time: pEndtime,
+                start_token: pStarttoken,
+                end_token: pEndtoken
+            }
+
+    }).then(function(res) {
+        console.log('modificado con exito');
+
+        window.location.href = 'historial.html'
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
+}
+

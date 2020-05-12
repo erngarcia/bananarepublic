@@ -53,4 +53,47 @@ router.get('/listar-metricas',(req,res) =>{
 	})
 });
 
+router.get('/buscar-metrica-id', function(req,res){
+	let _id = req.query._id;
+
+	Metricas.findOne({_id:_id}, (err, metricasDB) => {
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'No se pudieron registrar las metricas',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Las metricas se listaron adecuadamente',
+                _id:metricasDB
+            });
+		}
+	})
+});
+
+router.put('/modificar-metrica', function(req,res){
+	let body = req.body;
+
+	Metricas.updateOne({_id:body._id},{
+		$set:req.body
+	},
+		function(err, metricas){
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'No se pudo modificar las metricas',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Las metricas se modificaron adecuadamente',
+                metricas: metricas
+            });
+		}
+	})
+});
+
 module.exports  = router;

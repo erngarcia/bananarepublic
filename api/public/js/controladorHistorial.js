@@ -20,8 +20,23 @@ let mostrar_metricas = async() => {
 	        fila.insertCell().innerHTML = metricas[i]['end_time'];
 	        fila.insertCell().innerHTML = metricas[i]['start_token'];
 	        fila.insertCell().innerHTML = metricas[i]['end_token'];
-	        fila.insertCell().innerHTML = ((parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/(parseInt(metricas[i]['end_time'])-parseInt(metricas[i]['start_time']))).toFixed(2);
+	        fila.insertCell().innerHTML = ((parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/((parseInt(metricas[i]['end_time'])-parseInt(metricas[i]['start_time']))/60)).toFixed(1);
 	        fila.insertCell().innerHTML = parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']);
+
+	        let celda_editar = fila.insertCell();
+	        let boton_editar = document.createElement('button');
+	        boton_editar.type = 'button';
+
+	        boton_editar.addEventListener('click', () => {
+	        	localStorage.setItem('_id_metrica', metricas[i]._id);
+	        	window.location.href = "editar_metrica.html";
+	        	console.log(metricas[i]._id);
+	        });
+
+	        celda_editar.appendChild(boton_editar);
+	        boton_editar.innerText = "Editar";
+
+
     	}
     	else if(moment(metricas[i]['fecha']).format('DD-MM-YYYY').includes(filtro)){
 	        let fila = tbody.insertRow();
@@ -32,7 +47,7 @@ let mostrar_metricas = async() => {
 	        fila.insertCell().innerHTML = metricas[i]['end_time'];
 	        fila.insertCell().innerHTML = metricas[i]['start_token'];
 	        fila.insertCell().innerHTML = metricas[i]['end_token'];
-	        fila.insertCell().innerHTML = ((parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/(parseInt(metricas[i]['end_time'])-parseInt(metricas[i]['start_time']))).toFixed(2);
+	        fila.insertCell().innerHTML = ((parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/((parseInt(metricas[i]['end_time'])-parseInt(metricas[i]['start_time']))/60)).toFixed(1);
 	        fila.insertCell().innerHTML = parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']);
     	}
       
