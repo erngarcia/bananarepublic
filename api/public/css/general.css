@@ -103,3 +103,12 @@ th {
   background-color: grey;
   color: white;
 }
+.btn-export{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	float:right;
+	margin-right: 18%;
+}
+.btn-export input{
+	border: solid black;
+}

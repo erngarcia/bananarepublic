@@ -35,13 +35,104 @@ let mostrar_metricas = async() => {
 	        fila.insertCell().innerHTML = ((parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/(parseInt(metricas[i]['end_time'])-parseInt(metricas[i]['start_time']))).toFixed(2);
 	        fila.insertCell().innerHTML = parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']);
     	}
-        
+      
     }
+   	const dataTable = document.getElementById("tbl-metricas");
+
+	new TableCSVExporter(dataTable).convertToCSV();
+
+	const btnExportToCSV = document.getElementById("btnExportToCSV");
+
+
+	btnExportToCSV.addEventListener("click", () =>{
+
+		const exporter = new TableCSVExporter(dataTable);
+
+		const csvOutput = exporter.convertToCSV();
+
+		const csvBlob = new Blob([csvOutput], {type: "text/csv"});
+
+		const blobURL = URL.createObjectURL(csvBlob);
+
+		const anchorElement = document.createElement("a");
+
+		anchorElement.href = blobURL;
+
+		anchorElement.download = "table-export.csv"
+
+		anchorElement.click();
+
+		setTimeout(()=>{
+			URL.revokeObjectURL(blobURL);
+		}, 500);
+	});
 };
 
 mostrar_metricas();
 
 inputFiltro.addEventListener('keyup',mostrar_metricas);
+
+ class TableCSVExporter{
+ 	constructor(table, includeHeaders = true){
+
+ 		this.table = table;
+
+ 		this.rows = Array.from(table.querySelectorAll("tr"));
+
+ 		if (!includeHeaders && this.row[0].querySelectorAll("th").length){
+ 			this.rows.shift();
+ 		}
+ 	}
+
+ 	convertToCSV(){
+
+ 		const lines = [];
+
+ 		const numCols = this._findLongestRowLength();
+
+ 		for (const row of this.rows){
+ 			let line = "";
+
+ 			for (let i = 0; i < numCols; i++){
+ 				if(row.children[i] !== undefined){
+ 					line += TableCSVExporter.parseCell(row.children[i]);
+ 				}
+
+ 				line += (i !== (numCols - 1)) ? "," : "";
+ 			}
+
+ 			lines.push(line);
+ 		}
+
+ 		return lines.join("\n");
+ 	}
+
+ 	_findLongestRowLength(){
+
+ 		return this.rows.reduce((l, row) => row.childElementCount > l ? row.childElementCount : l, 0 );
+
+
+ 	}
+
+
+ 	static parseCell(tableCell){
+
+ 		let parsedValue = tableCell.textContent;
+
+ 		//Replace all double quotes with two double quotes
+ 		parsedValue = parsedValue.replace(/"/g, `""`);
+
+ 		//if value contains comma, newline or double quotes, enclose in double quotes
+ 		parsedValue = /[",\n]/.test(parsedValue) ? `"${parsedValue}"` : parsedValue;
+
+ 		return parsedValue;
+
+ 	}
+
+ }
+
+
+
 
 
 

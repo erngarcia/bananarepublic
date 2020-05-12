@@ -21,7 +21,7 @@ let registrarDatos = async (plogin, pcycle_name,pFecha, pStarttime, pEndtime, pS
         if (res.data.resultado == false) {
             switch (res.data.err.code) {
                 case 11000:
-                    console.log('Ya se registró ese dato');
+                    console.log('Ya se registro ese dato');
                     Swal.fire({
                         title: 'No se han podido enviar sus datos',
                         text: 'Ya se registró esa caracteristica',
