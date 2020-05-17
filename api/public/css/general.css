@@ -84,6 +84,12 @@ form input{
 	height:25px;
 	font-size: 20px;
 }
+form select{
+	width: 200px;
+	border: transparent;
+	height:30px;
+	font-size: 20px;
+}
 .fecha{
 	width: 200px;
 	border: transparent;
@@ -126,3 +132,18 @@ th {
 	height:25px;
 	font-size: 20px;
 }
+.boton{
+	width: 200px;
+	border: transparent;
+	height:25px;
+	font-size: 20px;
+	padding-top: 20px;
+	float:right;
+	margin-right: 60px;
+
+}
+.table-ciclos{
+  border-collapse: collapse;
+  width: 85%;
+}
+

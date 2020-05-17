@@ -42,22 +42,36 @@
 				
 			</h1>
 		</div>
-		<div style="margin-left: 15%; padding-top: 10%;">
+		<div style="margin-left: 10%; padding-top: 10%;">
 			<form id="form">
 				Date:<br>
 				<input class="fecha" type="date" name="fecha" id="fecha" required>
 				<br>
 				<br>
 				<br>
-				Editar Info:<br>
+				Edit Info:<br>
 				<input type="txt" id ="login" name="login" placeholder="Login" required>	
-				<input type="txt" id ="cycle_name" name="cycle_name" placeholder="Cycle Info" required>	
+				<input type="txt" id ="cycle_name" name="cycle_name" placeholder="Cycle Info" required>
+				<select id="slt-worktype" required>
+					<option value = "">--Worktype--</option>
+					<option value = "acdc voiceqa">ACDC VoiceQA</option>
+					<option value = "pronning">Pronning</option>
+					<option value = "recqa">RecQA</option>
+					<option value = "lse voiceqa">LSE VoiceQA</option>
+					<option value = "prooflistening">Prooflistening</option>
+					<option value = "mushra">Mushra</option>
+					<option value = "preference">Preference</option>
+					<option value = "mos">MOS</option>
+					<option value = "review pronning">Review Pronning</option>
+					<option value = "review prooflistening">Review Prooflistening</option>
+				</select>
 				<input type="txt" id ="startTime" name="startTime" placeholder="Start time" required>
 				<input type="txt" id="endTime" name="endTime" placeholder="End time" required>
 				<input type="txt" id="startToken" name="startToken" placeholder="Start token" required>
 				<input type="txt" id ="endToken" name="endToken" placeholder="End token" required>
-				<input type="button" id="boton" name="submit" value="Submit" required>
-
+			<div class = "boton">
+				<input type="button" id="boton" name="submit" value="Save" required>
+			</div>
 			</form>
 		</div>
 	</div>

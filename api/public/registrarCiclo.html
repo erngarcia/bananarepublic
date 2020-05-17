@@ -66,14 +66,40 @@
 					<option value = "mushra">Mushra</option>
 					<option value = "preference">Preference</option>
 					<option value = "mos">MOS</option>
+					<option value = "CSA">Character Speech Annotation</option>
+					<option value = "verbatim">Verbatim</option>
 					<option value = "review pronning">Review Pronning</option>
 					<option value = "review prooflistening">Review Prooflistening</option>
-				</select><br><br>
-				<input type="txt" id="tokens" name="tokens" placeholder="Amount of tokens" required><br><br>
+					<option value = "other">Other</option>
+				</select><br><br><br>
+				<input type="txt" id="tokens" name="tokens" placeholder="# Tokens" required><br><br>
 				<input type="button" id="boton" name="submit" value="Submit" required>
 
 			</form>
 		</div>
+		<div style="padding-top:50px; margin-left: 15%;">
+		<table id="tbl-metricas" class="table-ciclos">
+			<thead>
+				<tr>
+					<th>
+						Cycle name
+					</th>
+					<th>
+						Locale
+					</th>
+					<th>
+						Worktype
+					</th>
+					<th>
+						Tokens
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
 	</div>
 </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></scriptsrc></script>
