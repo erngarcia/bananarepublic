@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarDatos = async (plogin, pcycle_name,pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) => {
+let registrarDatos = async (plogin, pcycle_name, pWorktype, pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) => {
 
     await axios({
             method: 'post',
@@ -9,6 +9,7 @@ let registrarDatos = async (plogin, pcycle_name,pFecha, pStarttime, pEndtime, pS
             data: {
                 login: plogin,
                 cycle_name: pcycle_name,
+                worktype:pWorktype,
             	fecha: pFecha,
                 start_time: pStarttime,
                 end_time: pEndtime,

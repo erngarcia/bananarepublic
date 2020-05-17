@@ -8,6 +8,7 @@ let inputStartTime = document.querySelector('#startTime');
 let inputEndTime = document.querySelector('#endTime');
 let inputLogin = document.querySelector('#login');
 let inputCycleName = document.querySelector('#cycle_name');
+let inputWorktype = document.querySelector('#slt-worktype');
 
 let validar = () =>{
 	let error = false;
@@ -69,9 +70,10 @@ let obtener_datos = () => {
 		 let sPendtime = inputEndTime.value;
 		 let sPstarttoken = inputStartToken.value;
 		 let sPendtoken = inputEndToken.value;
+		 let sPworktype = inputWorktype.value;
 		 let datosAceptados = false;
 
-		 registrarDatos(sPLogin, sPCycleName, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
+		 registrarDatos(sPLogin, sPCycleName, sPworktype, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
 		 // registroALista(sPfecha, sPnombretarea, sPdescripciontarea,sPprioridad,sPencargado);
 	}
 }
