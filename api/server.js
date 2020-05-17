@@ -56,4 +56,7 @@ function handleError(res, reason, message, code) {
 
 // Conexión a todas la rutas.
 const metricas = require('./routes/perfil.route');
+const ciclos = require('./routes/ciclos.route');
 app.use('/api', metricas);
+app.use('/api', ciclos);
+

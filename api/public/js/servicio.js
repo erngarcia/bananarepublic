@@ -99,7 +99,8 @@ let registrarCiclo = async (pcycle_name, pLocale, pWorktype, pTokens) => {
 
     await axios({
             method: 'post',
-            url: 'https://linguisticservices.herokuapp.com/api/registrar-ciclo',
+            url: 'https://linguisticservices.herokuapp.com/api/registrar-ciclo',           
+            // url: 'https://linguisticservices.herokuapp.com/api/registrar-ciclo',
             responseType: 'json',
             data: {
                 cycle_name: pcycle_name,

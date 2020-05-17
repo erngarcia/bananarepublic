@@ -11,6 +11,7 @@ router.post('/registrar-metricas',(req,res) =>{
 	let nueva_metrica = new Metricas({
 		login: body.login,
 		cycle_name:body.cycle_name,
+		worktype:body.worktype,
 		fecha: body.fecha,
 		start_time: body.start_time,
 		end_time: body.end_time,
@@ -95,5 +96,7 @@ router.put('/modificar-metrica', function(req,res){
 		}
 	})
 });
+
+
 
 module.exports  = router;

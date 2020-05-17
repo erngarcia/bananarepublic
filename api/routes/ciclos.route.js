@@ -1,18 +1,20 @@
-const express = require('express');
+'use strict';
 
+const express = require('express');
 const router = express.Router();
 const Ciclos = require('../models/ciclos.model');
 
 router.post('/registrar-ciclo',(req,res) =>{
+
 	let body = req.body;
 
-	let nuevo_ciclo = new Ciclo({
+	let nuevo_ciclo = new Ciclos({
 		cycle_name:body.cycle_name,
 		locale:body.locale,
 		worktype:body.worktype,		
 		tokens:body.tokens
 	});
-	nueva_metrica.save((err, metricasDB)=>{
+	nuevo_ciclo.save((err, ciclosDB)=>{
 		if(err){
 			res.json({
 				resultado:false,
@@ -23,9 +25,29 @@ router.post('/registrar-ciclo',(req,res) =>{
 				res.json({
 				resultado:true,
 				msj: 'Los datos se enviaron con éxito',
-				metricasDB
+				ciclosDB
 			});
 		}
 
 	});
 });
+
+router.get('/listar-ciclos',(req,res) =>{
+	Ciclos.find((err,lista_ciclos) => {
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'No se pudieron listar los ciclos',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Los ciclos se listaron adecuadamente',
+                lista_ciclos
+            });
+        }
+	})
+});
+
+module.exports  = router;
