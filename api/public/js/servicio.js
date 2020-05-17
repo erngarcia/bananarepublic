@@ -133,19 +133,19 @@ let registrarCiclo = async (pcycle_name, pLocale, pWorktype, pTokens) => {
 
 let listar_ciclos = async() => {
 
-    let metricas;
+    let ciclos;
 
     await axios({
             method: 'get',
-            url: 'https://linguisticservices.herokuapp.com/api/listar-ciclo',
+            url: 'https://linguisticservices.herokuapp.com/api/listar-ciclos',
             responseType: 'json'
         }).then(function(res) {
-            metricas = res.data.listar_ciclos;
+            ciclos = res.data.lista_ciclos;
         })
         .catch(function(err) {
             console.log(err);
         });
 
-    return metricas;
+    return ciclos;
 };
 

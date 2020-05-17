@@ -7,6 +7,7 @@ let lista_worktype = document.querySelector('#slt-worktype');
 let input_tokens = document.querySelector('#tokens');
 
 
+
 let validar = () =>{
 	let error = false;
 	let campos_requeridos = document.querySelectorAll('#form [required]');
@@ -52,5 +53,28 @@ let obtener_datos = () => {
 		registrarCiclo(sPCycleName, sPLocale, sPWorktype, sPtokens);
 	}
 }
+'use strict';
+const tbody = document.querySelector('#tbl-metricas tbody');
+const inputFiltro = document.querySelector('#txtfiltro');
+
+
+
+let mostrar_ciclos = async() => {
+	let ciclos = await listar_ciclos();
+
+    tbody.innerHTML = '';
+
+    for (let i = 0; i < ciclos.length; i++) {
+	    	let fila = tbody.insertRow();
+	        fila.insertCell().innerHTML = ciclos[i]['cycle_name'];
+	        fila.insertCell().innerHTML = ciclos[i]['locale'];
+	       	fila.insertCell().innerHTML = ciclos[i]['worktype'];
+	        fila.insertCell().innerHTML = ciclos[i]['tokens'];
+
+    	}
+
+};
+
+mostrar_ciclos();
 
 botonSubmit.addEventListener('click', obtener_datos);
