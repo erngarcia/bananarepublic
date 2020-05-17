@@ -95,3 +95,54 @@ let modificar_metrica = async(p_id, plogin, pcycle_name,pFecha, pStarttime, pEnd
     });
 }
 
+let registrarCiclo = async (pcycle_name, pLocale, pWorktype, pTokens) => {
+
+    await axios({
+            method: 'post',
+            url: 'https://linguisticservices.herokuapp.com/api/registrar-ciclo',
+            responseType: 'json',
+            data: {
+                cycle_name: pcycle_name,
+                locale: pLocale,
+                worktype: pWorktype,
+                tokens: pTokens,
+            }
+
+    }).then(function(res) {
+    
+        if (res.data.resultado == false) {
+            switch (res.data.err.code) {
+                case 11000:
+                    console.log('Ya se registro ese dato');
+                    Swal.fire({
+                        title: 'No se han podido enviar sus datos',
+                        text: 'Ya se registró esa caracteristica',
+                        icon: 'warning'
+                    })
+                break;
+            }
+        }
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
+};
+
+let listar_ciclos = async() => {
+
+    let metricas;
+
+    await axios({
+            method: 'get',
+            url: 'https://linguisticservices.herokuapp.com/api/listar-ciclo',
+            responseType: 'json'
+        }).then(function(res) {
+            metricas = res.data.listar_ciclos;
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+
+    return metricas;
+};
+

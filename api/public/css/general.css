@@ -112,3 +112,17 @@ th {
 .btn-export input{
 	border: solid black;
 }
+.form-ciclo{
+	margin-left: 40%;
+	padding-top: 10%;
+	
+}
+.form-ciclo input{
+	width: 200px;
+}
+.form-ciclo select{
+	width: 200px;
+	border: transparent;
+	height:25px;
+	font-size: 20px;
+}

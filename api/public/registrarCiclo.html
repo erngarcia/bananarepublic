@@ -43,17 +43,33 @@
 				
 			</h1>
 		</div>
-		<div style="margin-left: 40%; padding-top: 10%;">
+		<div class="form-ciclo">
 			<form id="form">
-				<br>
-				<br>
-				Cycle info:
-				<br>
-				<br>
-				<input type="txt" id ="cycle_name" name="cycle_name" placeholder="Cycle Name" required><br><br>
-				<input type="txt" id ="startTime" name="startTime" placeholder="Locale" required><br><br>
-				<input type="txt" id="endTime" name="endTime" placeholder="Worktype" required><br><br>
-				<input type="txt" id="startToken" name="startToken" placeholder="Amount of tokens" required><br><br>
+				<div>
+					<h1>Cycle info:</h1>
+				</div><br><br>
+
+				<input type="txt" id ="cycle_name" name="cycle_name" placeholder="Name" required><br><br><br>
+				<select id="slt-locale" required>
+					<option value = "">--Locale--</option>
+					<option value = "pt-BR">pt_BR</option>
+					<option value = "es-US">es_US</option>
+					<option value = "es-MX">es_MX</option>
+				</select><br><br>
+				<select id="slt-worktype" required>
+					<option value = "">--Worktype--</option>
+					<option value = "acdc voiceqa">ACDC VoiceQA</option>
+					<option value = "pronning">Pronning</option>
+					<option value = "recqa">RecQA</option>
+					<option value = "lse voiceqa">LSE VoiceQA</option>
+					<option value = "prooflistening">Prooflistening</option>
+					<option value = "mushra">Mushra</option>
+					<option value = "preference">Preference</option>
+					<option value = "mos">MOS</option>
+					<option value = "review pronning">Review Pronning</option>
+					<option value = "review prooflistening">Review Prooflistening</option>
+				</select><br><br>
+				<input type="txt" id="tokens" name="tokens" placeholder="Amount of tokens" required><br><br>
 				<input type="button" id="boton" name="submit" value="Submit" required>
 
 			</form>
@@ -62,6 +78,6 @@
 </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></scriptsrc></script>
 <script type="text/javascript" src="js/servicio.js"></script>
-<script type="text/javascript" src="js/controladorPerfil.js"></script>
+<script type="text/javascript" src="js/controladorCiclo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </html>
