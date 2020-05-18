@@ -41,7 +41,7 @@ router.get('/listar-metricas',(req,res) =>{
         if (err) {
             res.json({
                 resultado: false,
-                msj: 'No se pudieron registrar las metricas',
+                msj: 'No se pudieron listar las metricas',
                 err
             });
         } else {

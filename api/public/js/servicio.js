@@ -119,7 +119,7 @@ let registrarCiclo = async (pcycle_name, pLocale, pWorktype, pTokens) => {
                     console.log('Ya se registro ese dato');
                     Swal.fire({
                         title: 'No se han podido enviar sus datos',
-                        text: 'Ya se registró esa caracteristica',
+                        text: 'Ya se registró ese dato',
                         icon: 'warning'
                     })
                 break;
