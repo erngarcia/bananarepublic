@@ -6,7 +6,7 @@ const boton = document.querySelector('#boton');
 
 let login_form = () => {
 	if (login.value == "linguistic services" && pswd.value == "adscentral"){
-		window.open("landingbaseinput.html")
+		window.location.href = "ladingbaseinput.html"
 	}else{
 		alert("Wrong user name or password")
 	}
