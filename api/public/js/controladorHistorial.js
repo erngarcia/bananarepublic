@@ -16,7 +16,7 @@ let mostrar_metricas = async() => {
 	        fila.insertCell().innerHTML = metricas[i]['login'];
 	        fila.insertCell().innerHTML = metricas[i]['cycle_name'];
 	       	fila.insertCell().innerHTML = metricas[i]['worktype'];
-	        fila.insertCell().innerHTML = moment(metricas[i]['fecha']).tz("America/Toronto").format('DD-MM-YYYY');
+	        fila.insertCell().innerHTML = moment(metricas[i]['fecha']).format('DD-MM-YYYY');
 	        fila.insertCell().innerHTML = metricas[i]['start_time'];
 	        fila.insertCell().innerHTML = metricas[i]['end_time'];
 	        fila.insertCell().innerHTML = metricas[i]['start_token'];
@@ -44,7 +44,7 @@ let mostrar_metricas = async() => {
 	        fila.insertCell().innerHTML = metricas[i]['login'];
 	        fila.insertCell().innerHTML = metricas[i]['cycle_name'];
 	       	fila.insertCell().innerHTML = metricas[i]['worktype'];
-	        fila.insertCell().innerHTML = moment(metricas[i]['fecha']).tz("America/Toronto").format('DD-MM-YYYY');
+	        fila.insertCell().innerHTML = moment(metricas[i]['fecha']).format('DD-MM-YYYY');
 	        fila.insertCell().innerHTML = metricas[i]['start_time'];
 	        fila.insertCell().innerHTML = metricas[i]['end_time'];
 	        fila.insertCell().innerHTML = metricas[i]['start_token'];
