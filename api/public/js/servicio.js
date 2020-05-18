@@ -90,7 +90,7 @@ let modificar_metrica = async(p_id, plogin, pcycle_name, pWorktype, pFecha, pSta
     }).then(function(res) {
         console.log('modificado con exito');
 
-        window.location.href = 'historial.html'
+        window.location.href = 'historiallsbananarep.html'
     })
     .catch(function(err) {
         console.log(err);
