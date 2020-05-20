@@ -9,7 +9,7 @@ let registrarDatos = async (plogin, pcycle_name, pWorktype, pFecha, pStarttime, 
             data: {
                 login: plogin,
                 cycle_name: pcycle_name,
-                worktype:pWorktype,
+                worktype: pWorktype,
             	fecha: pFecha,
                 start_time: pStarttime,
                 end_time: pEndtime,
