@@ -7,21 +7,27 @@ const inputFiltro = document.querySelector('#txtfiltro');
 let mostrar_metricas = async() => {
 	let metricas = await listar_metricas();
 	let filtro = inputFiltro.value;
-
     tbody.innerHTML = '';
 
     for (let i = 0; i < metricas.length; i++) {
     	if(metricas[i]['login'].includes(filtro)){
 	    	let fila = tbody.insertRow();
+	    	let n1 = moment.duration(metricas[i]['start_time']); 
+	    	let n2 = moment.duration(metricas[i]['end_time']);
+	    	let newTime = n2.subtract(n1);
+	    	
+
 	        fila.insertCell().innerHTML = metricas[i]['login'];
 	        fila.insertCell().innerHTML = metricas[i]['cycle_name'];
 	       	fila.insertCell().innerHTML = metricas[i]['worktype'];
 	        fila.insertCell().innerHTML = moment(metricas[i]['fecha']).format('DD-MM-YYYY');
-	        fila.insertCell().innerHTML = ((metricas[i]['end_time']-metricas[i]['start_time'])/60).toFixed(1);
+	        fila.insertCell().innerHTML = (parseFloat(newTime.hours()) + parseFloat(newTime.minutes()/60)).toFixed(2);
+
+	        // fila.insertCell().innerHTML = ((metricas[i]['end_time']-metricas[i]['start_time'])/60).toFixed(1);
 	        // fila.insertCell().innerHTML = metricas[i]['start_token'];
 	        // fila.insertCell().innerHTML = metricas[i]['end_token'];
        		fila.insertCell().innerHTML = parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']);
-	        fila.insertCell().innerHTML = ((parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/((parseInt(metricas[i]['end_time'])-parseInt(metricas[i]['start_time']))/60)).toFixed(1);
+	        fila.insertCell().innerHTML = ((parseInt(metricas[i]['end_token'])-parseInt(metricas[i]['start_token']))/(parseFloat(newTime.hours()) + parseFloat(newTime.minutes()/60))).toFixed(1);
 
 	        let celda_editar = fila.insertCell();
 	        let boton_editar = document.createElement('button');
@@ -40,11 +46,16 @@ let mostrar_metricas = async() => {
     	}
     	else if(moment(metricas[i]['fecha']).format('DD-MM-YYYY').includes(filtro)){
 	        let fila = tbody.insertRow();
+	        let n1 = moment.duration(metricas[i]['start_time']); 
+	    	let n2 = moment.duration(metricas[i]['end_time']);
+	    	let newTime = n2.subtract(n1);
+
 	        fila.insertCell().innerHTML = metricas[i]['login'];
 	        fila.insertCell().innerHTML = metricas[i]['cycle_name'];
 	       	fila.insertCell().innerHTML = metricas[i]['worktype'];
 	        fila.insertCell().innerHTML = moment(metricas[i]['fecha']).format('DD-MM-YYYY');
-	        fila.insertCell().innerHTML = ((metricas[i]['end_time']-metricas[i]['start_time'])/60).toFixed(1);
+	        fila.insertCell().innerHTML = (parseFloat(newTime.hours()) + parseFloat(newTime.minutes()/60)).toFixed(1)
+	        // fila.insertCell().innerHTML = ((metricas[i]['end_time']-metricas[i]['start_time'])/60).toFixed(1);
 	        // fila.insertCell().innerHTML = metricas[i]['start_time'];
 	        // fila.insertCell().innerHTML = metricas[i]['end_time'];
 	        // fila.insertCell().innerHTML = metricas[i]['start_token'];

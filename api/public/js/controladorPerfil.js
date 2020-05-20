@@ -77,6 +77,14 @@ let obtener_datos = () => {
 		 let datosAceptados = false;
 
 		 registrarDatos(sPLogin, sPCycleName, sPworktype, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
+
+		 let n1 = moment.duration(inputStartTime.value);
+		 let n2 = moment.duration(inputEndTime.value);
+		 let nuevo = n2.subtract(n1);
+		 console.log((parseFloat(nuevo.hours())));
+		 console.log(parseFloat(nuevo.minutes()/60));
+		 console.log((parseFloat(nuevo.hours()) + parseFloat(nuevo.minutes()/60)));
+
 		 // registroALista(sPfecha, sPnombretarea, sPdescripciontarea,sPprioridad,sPencargado);
 	}
 }
