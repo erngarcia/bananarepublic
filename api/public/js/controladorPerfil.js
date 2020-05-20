@@ -33,12 +33,12 @@ let validar = () =>{
 			inputFecha.classList.remove('input');
 		}
 
-    if((parseInt(inputStartTime.value)) >= (parseInt(inputEndTime.value))) {
-            inputStartTime.classList.add('input');
-            error = true;
-        }else{
-			inputStartTime.classList.remove('input');
-		}
+  //   if((parseInt(inputStartTime.value)) >= (parseInt(inputEndTime.value))) {
+  //           inputStartTime.classList.add('input');
+  //           error = true;
+  //       }else{
+		// 	inputStartTime.classList.remove('input');
+		// }
 
     if(parseInt(inputStartToken.value) >= parseInt(inputEndToken.value)) {
             inputStartToken.classList.add('input');
@@ -76,11 +76,11 @@ let obtener_datos = () => {
 		 let sPworktype = inputWorktype.value;
 		 let datosAceptados = false;
 
+
 		 registrarDatos(sPLogin, sPCycleName, sPworktype, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
 
-		 let n1 = moment.duration(inputStartTime.value);
-		 let n2 = moment.duration(inputEndTime.value);
-		 let nuevo = n2.subtract(n1);
+
+		 
 		 console.log((parseFloat(nuevo.hours())));
 		 console.log(parseFloat(nuevo.minutes()/60));
 		 console.log((parseFloat(nuevo.hours()) + parseFloat(nuevo.minutes()/60)));
