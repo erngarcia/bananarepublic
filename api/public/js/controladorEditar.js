@@ -36,7 +36,7 @@ let validar = () =>{
 	let campos_requeridos = document.querySelectorAll('#form [required]');
 
 	for(let i=0; i<campos_requeridos.length; i++){
-		if(campos_requeridos[i].value == ''){
+		if(campos_requeridos[i].value == ""){
 			campos_requeridos[i].classList.add('input');
 			error = true;
 		}else{
@@ -50,8 +50,14 @@ let validar = () =>{
         }else{
 			inputFecha.classList.remove('input');
 		}
-
-    if((parseInt(inputStartTime.value)) >= (parseInt(inputEndTime.value))) {
+	if(inputFecha.value == ""){
+            inputFecha.classList.add('input');
+            error = true;
+        }else{
+			inputFecha.classList.remove('input');
+		}
+	
+    if((parseFloat(n1.hours()+n1.minutes())) >= (parseFloat(n2.hours()+n2.minutes()))) {
             inputStartTime.classList.add('input');
             error = true;
         }else{
