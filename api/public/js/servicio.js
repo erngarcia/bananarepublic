@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarDatos = async (plogin, pcycle_name, pWorktype, pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) => {
+let registrarDatos = async (plogin, pcycle_name, pWorktype, pFecha, pLocale, pStarttime, pEndtime, pStarttoken, pEndtoken) => {
 
     await axios({
             method: 'post',
@@ -11,6 +11,7 @@ let registrarDatos = async (plogin, pcycle_name, pWorktype, pFecha, pStarttime, 
                 cycle_name: pcycle_name,
                 worktype: pWorktype,
             	fecha: pFecha,
+                locale: pLocale,
                 start_time: pStarttime,
                 end_time: pEndtime,
                 start_token: pStarttoken,
@@ -70,7 +71,7 @@ let obtener_metrica_id = async(_id) =>{
     }
 }
 
-let modificar_metrica = async(p_id, plogin, pcycle_name, pWorktype, pFecha, pStarttime, pEndtime, pStarttoken, pEndtoken) =>{
+let modificar_metrica = async(p_id, plogin, pcycle_name, pWorktype, pFecha, pLocale, pStarttime, pEndtime, pStarttoken, pEndtoken) =>{
     await axios({
             method: 'put',
             url: 'https://linguisticservices.herokuapp.com/api/modificar-metrica',
@@ -81,6 +82,7 @@ let modificar_metrica = async(p_id, plogin, pcycle_name, pWorktype, pFecha, pSta
                 cycle_name: pcycle_name,
                 worktype: pWorktype,
                 fecha: pFecha,
+                locale: pLocale,
                 start_time: pStarttime,
                 end_time: pEndtime,
                 start_token: pStarttoken,

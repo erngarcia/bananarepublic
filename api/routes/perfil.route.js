@@ -13,6 +13,7 @@ router.post('/registrar-metricas',(req,res) =>{
 		cycle_name:body.cycle_name,
 		worktype:body.worktype,
 		fecha: body.fecha,
+		locale:body.locale,
 		start_time: body.start_time,
 		end_time: body.end_time,
 		start_token: body.start_token,

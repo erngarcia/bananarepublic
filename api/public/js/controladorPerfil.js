@@ -9,6 +9,7 @@ let inputEndTime = document.querySelector('#endTime');
 let inputLogin = document.querySelector('#login');
 let inputCycleName = document.querySelector('#cycle_name');
 let inputWorktype = document.querySelector('#slt-worktype');
+let inputLocale = document.querySelector('#locale');
 
 const tbody = document.querySelector('#tbl-metricas tbody');
 const inputFiltro = document.querySelector('#txtfiltro');
@@ -81,11 +82,13 @@ let obtener_datos = () => {
 		 let sPLogin = inputLogin.value;
 		 let sPCycleName = inputCycleName.value;
 		 let sPfecha = inputFecha.value;
+		 let sPworktype = inputWorktype.value;
+		 let sPlocale = inputLocale.value;
 		 let sPstarttime = inputStartTime.value;
 		 let sPendtime = inputEndTime.value;
 		 let sPstarttoken = inputStartToken.value;
 		 let sPendtoken = inputEndToken.value;
-		 let sPworktype = inputWorktype.value;
+		 
 		 let datosAceptados = false;
 
 		 if(sPworktype == "break"){
@@ -101,16 +104,10 @@ let obtener_datos = () => {
 		 	sPendtoken = "0";
 		 }
 
-		 console.log(sPendtoken);
-		 console.log(sPstarttoken);
 
-		 registrarDatos(sPLogin, sPCycleName, sPworktype, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
+		 registrarDatos(sPLogin, sPCycleName, sPworktype, sPfecha, sPlocale, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
 
 
-		 
-		 console.log((parseFloat(nuevo.hours())));
-		 console.log(parseFloat(nuevo.minutes()/60));
-		 console.log((parseFloat(nuevo.hours()) + parseFloat(nuevo.minutes()/60)));
 
 		 // registroALista(sPfecha, sPnombretarea, sPdescripciontarea,sPprioridad,sPencargado);
 	}

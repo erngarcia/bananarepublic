@@ -13,6 +13,8 @@ let inputEndTime = document.querySelector('#endTime');
 let inputLogin = document.querySelector('#login');
 let inputCycleName = document.querySelector('#cycle_name');
 let inputWorktype = document.querySelector('#slt-worktype');
+let inputLocale = document.querySelector('#locale');
+
 
 
 console.log(_id);
@@ -28,6 +30,7 @@ let llenar_campos = async() =>{
 	inputLogin.value = metricas.login;
 	inputCycleName.value = metricas.cycle_name;
 	inputWorktype.value = metricas.worktype;
+	inputLocale.value = metricas.locale;
 
 	console.log(metricas);
 };
@@ -100,6 +103,7 @@ let obtener_datos = () => {
 		 let sPstarttoken = inputStartToken.value;
 		 let sPendtoken = inputEndToken.value;
 		 let sPWorktype = inputWorktype.value;
+		 let sPlocale = inputLocale.value;
 
 		 if(sPWorktype == "break"){
 		 	sPstarttoken = "0";
@@ -118,7 +122,7 @@ let obtener_datos = () => {
 
 		 let datosAceptados = false;
 
-		 modificar_metrica(_id2, sPLogin, sPCycleName, sPWorktype, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
+		 modificar_metrica(_id2, sPLogin, sPCycleName, sPWorktype, sPfecha, sPlocale, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
 		 // registroALista(sPfecha, sPnombretarea, sPdescripciontarea,sPprioridad,sPencargado);
 	}
 }
