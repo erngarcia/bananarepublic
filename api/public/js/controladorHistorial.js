@@ -16,11 +16,12 @@ let mostrar_metricas = async() => {
 	    	let n2 = moment.duration(metricas[i]['end_time']);
 	    	let newTime = n2.subtract(n1);
 	    	
+	    	// moment.tz(new Date(),"America/Costa_Rica").format("YYYY-MM-DD")
 
 	        fila.insertCell().innerHTML = metricas[i]['login'];
 	        fila.insertCell().innerHTML = metricas[i]['cycle_name'];
 	       	fila.insertCell().innerHTML = metricas[i]['worktype'];
-	        fila.insertCell().innerHTML = moment(metricas[i]['fecha']).format('DD-MM-YYYY');
+	        fila.insertCell().innerHTML = moment.tz(metricas[i]['fecha'],"America/Costa_Rica").format('DD-MM-YYYY');
 	        fila.insertCell().innerHTML = (parseFloat(newTime.hours()) + parseFloat(newTime.minutes()/60)).toFixed(2);
 
 	        // fila.insertCell().innerHTML = ((metricas[i]['end_time']-metricas[i]['start_time'])/60).toFixed(1);
@@ -53,7 +54,7 @@ let mostrar_metricas = async() => {
 	        fila.insertCell().innerHTML = metricas[i]['login'];
 	        fila.insertCell().innerHTML = metricas[i]['cycle_name'];
 	       	fila.insertCell().innerHTML = metricas[i]['worktype'];
-	        fila.insertCell().innerHTML = moment(metricas[i]['fecha']).format('DD-MM-YYYY');
+	        fila.insertCell().innerHTML = moment.tz(metricas[i]['fecha'],"America/Costa_Rica").format('DD-MM-YYYY');
 	        fila.insertCell().innerHTML = (parseFloat(newTime.hours()) + parseFloat(newTime.minutes()/60)).toFixed(1)
 	        // fila.insertCell().innerHTML = ((metricas[i]['end_time']-metricas[i]['start_time'])/60).toFixed(1);
 	        // fila.insertCell().innerHTML = metricas[i]['start_time'];
@@ -66,6 +67,8 @@ let mostrar_metricas = async() => {
     	}
       
     }
+
+    let contador = 0;
    	const dataTable = document.getElementById("tbl-metricas");
 
 	new TableCSVExporter(dataTable).convertToCSV();
@@ -95,6 +98,7 @@ let mostrar_metricas = async() => {
 			URL.revokeObjectURL(blobURL);
 		}, 500);
 	});
+	console.log(contador++);
 };
 
 mostrar_metricas();

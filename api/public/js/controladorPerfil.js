@@ -13,7 +13,7 @@ let inputWorktype = document.querySelector('#slt-worktype');
 const tbody = document.querySelector('#tbl-metricas tbody');
 const inputFiltro = document.querySelector('#txtfiltro');
 
-inputFecha.value = moment(new Date()).format("YYYY-MM-DD");
+inputFecha.value = moment.tz(new Date(),"America/Costa_Rica").format("YYYY-MM-DD");
 
 let validar = () =>{
 	let error = false;
