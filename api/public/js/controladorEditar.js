@@ -110,7 +110,7 @@ let obtener_datos = () => {
 
 		 let datosAceptados = false;
 
-		 modificar_metrica(_id2, sPLogin, sPWorktype, sPCycleName, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
+		 modificar_metrica(_id2, sPLogin, sPCycleName, sPWorktype, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
 		 // registroALista(sPfecha, sPnombretarea, sPdescripciontarea,sPprioridad,sPencargado);
 	}
 }
