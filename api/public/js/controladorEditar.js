@@ -93,15 +93,15 @@ let obtener_datos = () => {
 		 let sPendtoken = inputEndToken.value;
 		 let sPWorktype = inputWorktype.value;
 
-		 if(sPworktype == "break"){
+		 if(sPWorktype == "break"){
 		 	sPstarttoken = "0";
 		 	sPendtoken = "0";
 		 }
-		 if(sPworktype == "project"){
+		 if(sPWorktype == "project"){
 		 	sPstarttoken = "0";
 		 	sPendtoken = "0";
 		 }
-		 if(sPworktype == "meeting"){
+		 if(sPWorktype == "meeting"){
 		 	sPstarttoken = "0";
 		 	sPendtoken = "0";
 		 }
