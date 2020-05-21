@@ -46,11 +46,15 @@ let validar = () =>{
 			inputFecha.classList.remove('input');
 		}
 	
-    if((parseFloat(n1.hours()+n1.minutes())) >= (parseFloat(n2.hours()+n2.minutes()))) {
+    if((parseFloat(n1.hours()+n1.minutes())) > (parseFloat(n2.hours()+n2.minutes()))) {
             inputStartTime.classList.add('input');
+            console.log((parseFloat(n1.hours()+n1.minutes())));
+            console.log((parseFloat(n2.hours()+n2.minutes())));
             error = true;
         }else{
 			inputStartTime.classList.remove('input');
+			console.log((parseFloat(n1.hours()+n1.minutes())));
+            console.log((parseFloat(n2.hours()+n2.minutes())));
 		}
 
     if(parseInt(inputStartToken.value) > parseInt(inputEndToken.value)) {
@@ -59,6 +63,7 @@ let validar = () =>{
         }else{
 			inputStartToken.classList.remove('input');
 		}
+
 
 	return error;
 };
