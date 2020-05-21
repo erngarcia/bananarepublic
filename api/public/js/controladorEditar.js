@@ -34,6 +34,8 @@ let llenar_campos = async() =>{
 let validar = () =>{
 	let error = false;
 	let campos_requeridos = document.querySelectorAll('#form [required]');
+	let n1 = moment.duration(inputStartTime.value); 
+	let n2 = moment.duration(inputEndTime.value)	
 
 	for(let i=0; i<campos_requeridos.length; i++){
 		if(campos_requeridos[i].value == ""){
