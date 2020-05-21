@@ -58,7 +58,7 @@ let validar = () =>{
 			inputStartTime.classList.remove('input');
 		}
 
-    if(parseInt(inputStartToken.value) >= parseInt(inputEndToken.value)) {
+    if(parseInt(inputStartToken.value) > parseInt(inputEndToken.value)) {
             inputStartToken.classList.add('input');
             error = true;
         }else{
@@ -93,6 +93,20 @@ let obtener_datos = () => {
 		 let sPendtoken = inputEndToken.value;
 		 let sPWorktype = inputWorktype.value;
 
+		 if(sPworktype == "break"){
+		 	sPstarttoken = "0";
+		 	sPendtoken = "0";
+		 }
+		 if(sPworktype == "project"){
+		 	sPstarttoken = "0";
+		 	sPendtoken = "0";
+		 }
+		 if(sPworktype == "meeting"){
+		 	sPstarttoken = "0";
+		 	sPendtoken = "0";
+		 }
+
+
 
 		 let datosAceptados = false;
 
@@ -103,3 +117,7 @@ let obtener_datos = () => {
 llenar_campos();
 
 botonSubmit.addEventListener('click', obtener_datos);
+
+
+
+

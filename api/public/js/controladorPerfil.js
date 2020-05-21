@@ -13,12 +13,18 @@ let inputWorktype = document.querySelector('#slt-worktype');
 const tbody = document.querySelector('#tbl-metricas tbody');
 const inputFiltro = document.querySelector('#txtfiltro');
 
+inputFecha.value = moment(new Date()).format("YYYY-MM-DD");
+
 let validar = () =>{
 	let error = false;
 	let campos_requeridos = document.querySelectorAll('#form [required]');
+	let n1 = moment.duration(inputStartTime.value); 
+	let n2 = moment.duration(inputEndTime.value)
+
+
 
 	for(let i=0; i<campos_requeridos.length; i++){
-		if(campos_requeridos[i].value == ''){
+		if(campos_requeridos[i].value == ""){
 			campos_requeridos[i].classList.add('input');
 			error = true;
 		}else{
@@ -32,15 +38,21 @@ let validar = () =>{
         }else{
 			inputFecha.classList.remove('input');
 		}
+	if(inputFecha.value == ""){
+            inputFecha.classList.add('input');
+            error = true;
+        }else{
+			inputFecha.classList.remove('input');
+		}
+	
+    if((parseFloat(n1.hours()+n1.minutes())) >= (parseFloat(n2.hours()+n2.minutes()))) {
+            inputStartTime.classList.add('input');
+            error = true;
+        }else{
+			inputStartTime.classList.remove('input');
+		}
 
-  //   if((parseInt(inputStartTime.value)) >= (parseInt(inputEndTime.value))) {
-  //           inputStartTime.classList.add('input');
-  //           error = true;
-  //       }else{
-		// 	inputStartTime.classList.remove('input');
-		// }
-
-    if(parseInt(inputStartToken.value) >= parseInt(inputEndToken.value)) {
+    if(parseInt(inputStartToken.value) > parseInt(inputEndToken.value)) {
             inputStartToken.classList.add('input');
             error = true;
         }else{
@@ -76,6 +88,21 @@ let obtener_datos = () => {
 		 let sPworktype = inputWorktype.value;
 		 let datosAceptados = false;
 
+		 if(sPworktype == "break"){
+		 	sPstarttoken = "0";
+		 	sPendtoken = "0";
+		 }
+		 if(sPworktype == "project"){
+		 	sPstarttoken = "0";
+		 	sPendtoken = "0";
+		 }
+		 if(sPworktype == "meeting"){
+		 	sPstarttoken = "0";
+		 	sPendtoken = "0";
+		 }
+
+		 console.log(sPendtoken);
+		 console.log(sPstarttoken);
 
 		 registrarDatos(sPLogin, sPCycleName, sPworktype, sPfecha, sPstarttime, sPendtime, sPstarttoken, sPendtoken);
 

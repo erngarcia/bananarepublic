@@ -65,6 +65,8 @@ let mostrar_ciclos = async() => {
     tbody.innerHTML = '';
 
     for (let i = 0; i < ciclos.length; i++) {
+
+    	
 	    	let fila = tbody.insertRow();
 	        fila.insertCell().innerHTML = ciclos[i]['cycle_name'];
 	        fila.insertCell().innerHTML = ciclos[i]['locale'];

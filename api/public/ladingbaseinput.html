@@ -51,25 +51,25 @@
 				<br>
 				Info:<br>
 				<input type="txt" id ="login" name="login" placeholder="Login" required>	
-				<input type="txt" id ="cycle_name" name="cycle_name" placeholder="Cycle Info" required>	
+				<input type="txt" id ="cycle_name" name="cycle_name" placeholder="Task name" required>	
 				<select id="slt-worktype" required>
 					<option value = "">--Worktype--</option>
 					<option value = "acdc voiceqa">ACDC VoiceQA</option>
-					<option value = "pronning">Pronning</option>
-					<option value = "recqa">RecQA</option>
-					<option value = "lse voiceqa">LSE VoiceQA</option>
-					<option value = "prooflistening">Prooflistening</option>
-					<option value = "mushra">Mushra</option>
-					<option value = "preference">Preference</option>
-					<option value = "mos">MOS</option>
-					<option value = "CSA">Character Speech Annotation</option>
-					<option value = "verbatim">Verbatim</option>
-					<option value = "review pronning">Review Pronning</option>
-					<option value = "review prooflistening">Review Prooflistening</option>
+					<option value = "verbatim">Benchmark Analysis</option>
 					<option value = "break">Break</option>
-					<option value = "project">Project</option>
+					<option value = "CSA">Character Speech Annotation</option>
 					<option value = "meeting">Meeting</option>
+					<option value = "mos">MOS</option>
+					<option value = "mushra">MUSHRA</option>
 					<option value = "other">Other</option>
+					<option value = "preference">Preference</option>
+					<option value = "project">Project</option>
+					<option value = "pronning">Pronning</option>
+					<option value = "review pronning">Pronning Review</option>
+					<option value = "prooflistening">Prooflistening</option>
+					<option value = "review prooflistening">Prooflistening Review</option>
+					<option value = "recqa">RecQA</option>
+					<option value = "lse voiceqa">VoiceQA</option>	
 				</select>
 				<input type="time" id ="startTime" name="startTime" placeholder="Start time" required>
 				<input type="time" id="endTime" name="endTime" placeholder="End time" required>
@@ -84,7 +84,7 @@
 			<div style="padding-top:10%; margin-left: 15%;">
 				<div style="padding-bottom: 10px;">
 					<select id="txtfiltro">
-						<option value="none">----Select Locale----</option>
+						<option value="none">---Select Locale---</option>
 						<option value="pt-BR">pt-BR</option>
 						<option value="es-US">es-US</option>
 						<option value="es-MX">es-MX</option>
@@ -96,7 +96,7 @@
 					<thead>
 						<tr>
 							<th>
-								Cycle name
+								Task
 							</th>
 							<th>
 								Locale
@@ -105,7 +105,7 @@
 								Worktype
 							</th>
 							<th>
-								Tokens
+								Transactions
 							</th>
 						</tr>
 					</thead>
@@ -115,11 +115,12 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+</html>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></scriptsrc></script>
 <script type="text/javascript" src="js/servicio.js"></script>
 <script type="text/javascript" src="js/controladorPerfil.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
-</html>
+
 </html>
