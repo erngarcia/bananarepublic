@@ -84,6 +84,7 @@ form input{
 	border: transparent;
 	height:25px;
 	font-size: 20px;
+	padding-right: 10px;
 }
 form select{
 	width: 200px;
@@ -140,7 +141,7 @@ th {
 	font-size: 20px;
 	padding-top: 20px;
 	float:right;
-	margin-right: 60px;
+	margin-right: 250px;
 
 }
 .table-ciclos{
