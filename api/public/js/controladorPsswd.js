@@ -5,7 +5,7 @@ let pswd = document.querySelector('#password');
 const boton = document.querySelector('#boton');
 
 let login_form = () => {
-	if (login.value == "linguistic services" && pswd.value == "adscentral"){
+	if (login.value == "linguistic services" && pswd.value == "linguistparty"){
 		window.location.href = "ladingbaseinput.html"
 	}else{
 		alert("Wrong user name or password")
