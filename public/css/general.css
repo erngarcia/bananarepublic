@@ -1,0 +1,167 @@
+.input{
+	border: 2px solid red;
+}
+html{
+	font-family: 'Raleway', sans-serif;
+	font-family: 'Catamaran', sans-serif;
+}
+.header{
+	background-color: #F0503D;
+	display: flow-root;
+}
+.header h1{
+	font-size: 50px;
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+.header h2{
+	font-size:35px;
+	color: white;
+	padding-bottom: 40px;
+}
+.derecha{
+	float:right;
+	margin-right: 50px;
+
+}
+.izquierda{
+	float:left;
+	margin-left: 30px;
+}
+.derecha a{
+	padding-top: 70px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 30px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-top: 55px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+	background-color: transparent;
+
+}
+
+form input{
+	width: 150px;
+	border: transparent;
+	height:25px;
+	font-size: 20px;
+	padding-right: 10px;
+}
+form select{
+	width: 200px;
+	border: transparent;
+	height:30px;
+	font-size: 20px;
+}
+.fecha{
+	width: 200px;
+	height:25px;
+	font-size: 20px;
+	
+	}
+.table{
+  border-collapse: collapse;
+  width: 85%;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: grey;
+  color: white;
+}
+.btn-export{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	float:right;
+	margin-right: 18%;
+}
+.btn-export input{
+	border: solid black;
+}
+.form-ciclo{
+	margin-left: 44%;
+	padding-top: 10%;
+	
+}
+.form-ciclo input{
+	width: 200px;
+}
+.form-ciclo select{
+	width: 200px;
+	border: transparent;
+	height:25px;
+	font-size: 20px;
+}
+.boton{
+	width: 200px;
+	border: transparent;
+	height:25px;
+	font-size: 20px;
+	padding-top: 20px;
+	float:right;
+	margin-right: 250px;
+
+}
+.table-ciclos{
+  border-collapse: collapse;
+  width: 85%;
+}
+select{
+	width: 200px;
+	border: transparent;
+	height:30px;
+	font-size: 20px;
+}
+.titulo{
+	font-size: 40px;
+	padding-left: 125px
+}
+.content{
+	padding-top: 40px;
+	padding-right: 250px;
+	padding-left: 250px;
+	text-align: justify;
+
+}

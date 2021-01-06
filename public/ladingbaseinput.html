@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/jpg" href="css/img/banana.jpg">
+	<title>
+		Banana Republic
+	</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/general.css">
+	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Raleway&display=swap" rel="stylesheet"> 
+
+</head>
+<body>
+	<div class="header">
+		<div class="izquierda">
+			<h1>
+				Banana Republic
+			</h1>
+			<h2>
+				Linguistic Services tracker
+			</h2>
+		</div>
+		<div class="derecha">
+			<div class="dropdown">
+			  <button class="dropbtn">Menu</button>
+			  <div class="dropdown-content">
+			    <a href="https://adscentral.corp.amazon.com/">ADS Central</a>
+			    <a href="historiallsbananarep.html">History</a>
+			    <a href="helpbananarepls.html">Help</a>
+			    <a href="registrarCiclo.html">Cycles</a>
+  </div>
+</div>
+		</div>
+		<div>
+			<img src="">
+		</div>
+	</div>
+
+	<div>
+		<div>
+			<h1>
+				
+			</h1>
+		</div>
+		<div style="margin-left: 25%; padding-top: 10%;">
+			<form id="form">
+				Date:<br>
+				<input class="fecha" type="date" name="fecha" id="fecha" required>
+				<br>
+				<br>
+				<br>
+				Info:<br>
+				<input type="txt" id ="login" name="login" placeholder="Login" required>	
+				<input type="txt" id ="cycle_name" name="cycle_name" placeholder="Task name" required>	
+				<select id="slt-worktype" required>
+					<option value = "">--Worktype--</option>
+					<option value = "acdc voiceqa">ACDC VoiceQA</option>
+					<option value = "verbatim">Benchmark Analysis</option>
+					<option value = "break">Break</option>
+					<option value = "CSA">Character Speech Annotation</option>
+					<option value = "meeting">Meeting</option>
+					<option value = "mos">MOS</option>
+					<option value = "mushra">MUSHRA</option>
+					<option value = "other">Other</option>
+					<option value = "preference">Preference</option>
+					<option value = "project">Project</option>
+					<option value = "pronning">Pronning</option>
+					<option value = "review pronning">Pronning Review</option>
+					<option value = "prooflistening">Prooflistening</option>
+					<option value = "review prooflistening">Prooflistening Review</option>
+					<option value = "proofreading">Proofreading</option>
+					<option value = "recqa">RecQA</option>
+					<option value = "lse voiceqa">VoiceQA</option>	
+				</select>
+				<select id = "locale">
+					<option value = "">--Locale--</option>
+					<option value = "pt-BR">pt-BR</option>
+					<option value = "es-US">es-US</option>
+					<option value = "es-MX">es-MX</option>
+					<option value = "other">Other</option>
+				</select>
+				<div style = "padding-top: 5%;">
+					<input type="time" id ="startTime" name="startTime" placeholder="Start time" required>
+					<input type="time" id="endTime" name="endTime" placeholder="End time" required>
+					<input type="txt" id="startToken" name="startToken" placeholder="Start token" required>
+					<input type="txt" id ="endToken" name="endToken" placeholder="End token" required>
+				</div>
+			<div class = "boton">
+				<input type="button" id="boton" name="submit" value="Submit" required>
+			</div>
+
+			</form>
+		</div>
+			<div style="padding-top:10%; margin-left: 15%;">
+				<div style="padding-bottom: 10px;">
+					<select id="txtfiltro">
+						<option value="none">---Select Locale---</option>
+						<option value="pt-BR">pt-BR</option>
+						<option value="es-US">es-US</option>
+						<option value="es-MX">es-MX</option>
+						<option value="">all</option>
+					</select>
+					<!-- <input type="text" id="txtfiltro"> -->
+				</div>
+				<table id="tbl-metricas" class="table-ciclos">
+					<thead>
+						<tr>
+							<th>
+								Task
+							</th>
+							<th>
+								Locale
+							</th>
+							<th>
+								Worktype
+							</th>
+							<th>
+								Transactions
+							</th>
+						</tr>
+					</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+</html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-utils.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data-2012-2022.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></scriptsrc></script>
+<script type="text/javascript" src="js/servicio.js"></script>
+<script type="text/javascript" src="js/controladorPerfil.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+</html>
